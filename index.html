@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Birth Certificate</title>
   <style>
     body {
-      font-family: 'Times New Roman', serif;
+      font-family: "Times New Roman", serif;
       margin: 40px;
       background: #f9f9f9;
     }
@@ -16,6 +17,26 @@
       max-width: 800px;
       margin: auto;
     }
+
+    /* Header with left/right logos */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 16px;
+    }
+    .header .logo {
+      width: 90px;
+      height: auto;
+      object-fit: contain;
+    }
+    .header .title {
+      flex: 1;
+      text-align: center;
+      padding: 0 10px;
+    }
+
     h1, h2 {
       text-align: center;
       margin: 0;
@@ -29,24 +50,27 @@
     .info {
       margin-left: 10px;
     }
-    .logos {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .logos img {
-      margin: 0 10px;
-      width: 100px;
+
+    /* Print */
+    @media print {
+      body { background: #fff; margin: 0; }
+      .certificate { margin: 0; border-width: 1px; }
     }
   </style>
 </head>
 <body>
   <div class="certificate">
-    <div class="logos">
-      <img src="logo.png" alt="Logo 2">
+    <!-- Top header with two logos -->
+    <div class="header">
+      <!-- If your file name has spaces, encode them as %20 -->
+      <img class="logo" src="logo1.png" alt="Seal of Gujarat" />
+      <div class="title">
+        <h1>Government of Gujarat</h1>
+        <h2>Department of Public Health and Preventive Medicine</h2>
+      </div>
+      <img class="logo" src="logo2.png" alt="Birth and Death" />
     </div>
-    <h1>Government of Gujarat</h1>
-    <h2>Department of Health and Family Welfare</h2>
-    <hr>
+    <hr />
 
     <div class="section">
       <p><span class="label">District:</span><span class="info">SURAT</span></p>
